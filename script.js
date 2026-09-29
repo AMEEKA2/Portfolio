@@ -23,3 +23,14 @@ window.addEventListener('scroll', () => {
         if (a.getAttribute('href').includes(current)) a.classList.add('active-link');
     });
 });
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const m = document.getElementById('msg');
+  m.style.color = "#111827";
+  m.textContent = "Sending...";
+  setTimeout(()=>{
+    m.style.color = "green";
+    m.textContent = "✅ Message Sent! Thank you Ameeka will reply soon.";
+    this.reset();
+  }, 1000);
+});
